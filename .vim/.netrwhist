@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/nakarin/PNX8181/cvs/SW_ENGR/pnx8181/libgsdsp/include'
+let g:netrw_dirhist_2='/home/nakarin/Colorphone/ColorPhoneEdit/sqlite_callog/new/gui_code/gui/modules/CallLogModule'
+let g:netrw_dirhist_3='/home/nakarin/Colorphone/ColorPhoneEdit/sqlite_callog/new/gui_code/gui/modules/CallLogModule/include'
+let g:netrw_dirhist_4='/home/nakarin/PNX8181/cvs/SW_ENGR/pnx8181/image_build/gxv-build.cvscontrol/gxv_image_build/prog/war'
+let g:netrw_dirhist_5='/etc/vim'
+let g:netrw_dirhist_6='/usr/share/vim/vim74'
+let g:netrw_dirhist_7='/usr/share/vim/vim74/doc'
+let g:netrw_dirhist_8='/root/.vim/bundle/vim-easymotion'

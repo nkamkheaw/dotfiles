@@ -7,7 +7,8 @@ Install Vundle first from here: https://github.com/gmarik/Vundle.vim
 
 Then call PluginInstall.
 
-Install 'Compiz configuration settings manager'
+Install Compiz manager
+'apt-get install compizconfig-settings-manager compiz-plugins-extra'
 
 import compiz_config
 

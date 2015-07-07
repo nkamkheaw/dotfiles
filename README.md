@@ -14,6 +14,7 @@ import compiz_config
 
 ### keyboard remapping
 `xmodmap Xmodmap` for shift+[i,j,k,l] as arrow keys (vim style)
+Tips: Add the command to .bashrc to make it permanent.
 
 That's it.
 

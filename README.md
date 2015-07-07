@@ -13,7 +13,7 @@ Install Compiz manager
 import compiz_config
 
 ### keyboard remapping
-xmodmap Xmodmap for shift+[i,j,k,l] as arrow keys (vim style)
+`xmodmap Xmodmap` for shift+[i,j,k,l] as arrow keys (vim style)
 
 That's it.
 

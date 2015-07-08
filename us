@@ -54,8 +54,15 @@ xkb_symbols "basic" {
     key <AB10> {	[     slash,	question	]	};
 
     key <BKSL> {	[ backslash,         bar	]	};
-    key <CAPS> {	[ ISO_Level3_Shift	]	};
-    include "level3(ralt_switch)"
+    include "us(caps_switch)"
+};
+
+xkb_symbols "caps_switch" {
+  key <CAPS> {
+    type[Group1]="ONE_LEVEL",
+    symbols[Group1] = [ ISO_Level3_Shift ]
+  };
+  include "level3(modifier_mapping)"
 };
 
 partial alphanumeric_keys

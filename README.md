@@ -20,14 +20,6 @@ import compiz_config
 
 ### keyboard remapping
 
-#### xmodmap
-
-`xmodmap Xmodmap` for shift+[i,j,k,l] as arrow keys (vim style)
-
-Tips: Add the command to .bashrc to make it permanent.
-
-#### xkb
-
 put `us` at `/usr/share/X11/xkb/symbols/`
 
 Run `rm -r /var/lib/xkb/*`

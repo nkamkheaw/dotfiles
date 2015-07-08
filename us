@@ -110,11 +110,11 @@ xkb_symbols "intl" {
     key <AC03> { [	   d,          D,           eth,              ETH ] };
     key <AC04> { [	   f,          F,             f,                F ] };
     key <AC05> { [	   g,          G,             g,                G ] };
-    key <AC06> { [	   h,          H,          LEFT,             LEFT ] };
-    key <AC07> { [	   j,          J,          DOWN,             DOWN ] };
-    key <AC08> { [	   k,          K,            UP,               UP ] };
+    key <AC06> { [	   h,          H,             h,                H ] };
+    key <AC07> { [	   j,          J,             j,                J ] };
+    key <AC08> { [	   k,          K,            oe,               OE ] };
 
-    key <AC09> { [	   l,          L,         RIGHT,            RIGHT ] };
+    key <AC09> { [	   l,          L,        oslash,         Ooblique ] };
     key <AC10> { [ semicolon,      colon,     paragraph,           degree ] };
     key <AC11> { [dead_acute, dead_diaeresis, apostrophe,        quotedbl ] };
 

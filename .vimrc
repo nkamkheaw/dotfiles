@@ -66,6 +66,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,6 +103,12 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " Easy motion prefix
 map <space><space> <Plug>(easymotion-prefix)
 
+" ag
+if executable('ag')
+    let g:ackprg = 'ag'
+endif
+
+" personal remap
 nmap <silent> ,ev :tabedit $MYVIMRC<cr>
 nmap <silent> ,sv :so $MYVIMRC<cr>
 nmap <silent> <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>

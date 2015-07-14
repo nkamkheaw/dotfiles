@@ -104,11 +104,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " Easy motion prefix
 map <space><space> <Plug>(easymotion-prefix)
 
-" ag
-if executable('ag')
-    let g:ackprg = 'ag'
-endif
-
 " personal remap
 nmap <silent> ,ev :tabedit $MYVIMRC<cr>
 nmap <silent> ,sv :so $MYVIMRC<cr>
@@ -116,4 +111,11 @@ nmap <silent> <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra
 map <C-\> :tab split <CR>:exec("tag ".expand("<cword>"))<CR>
 map <space>l /\%>80v.\+<cr>
 map <C-n> <plug>NERDTreeTabsToggle<cr>
+
+" ag
+if executable('ag')
+    let g:ackprg = 'ag'
+else
+    echom "Install silversearch-ag!!"
+endif
 

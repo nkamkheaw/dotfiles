@@ -10,6 +10,8 @@ Note: This might change
 
 Then call `PluginInstall`
 
+`ln -s .vimrc ../.vimrc`
+
 ### windows navigation
 
 Install Compiz manager

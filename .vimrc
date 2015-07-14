@@ -91,6 +91,7 @@ set lazyredraw
 set showmode
 set wildmenu
 set number
+set cpoptions+=$
 " set cc=+1
 
 " air-line configurations

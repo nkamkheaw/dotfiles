@@ -111,7 +111,6 @@ nmap <silent> <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra
 map <C-\> :tab split <CR>:exec("tag ".expand("<cword>"))<CR>
 map <space>l /\%>80v.\+<cr>
 map <C-n> <plug>NERDTreeTabsToggle<cr>
-cnoremap sudow w !sudo tee % >/dev/null
 
 " ag
 if executable('ag')

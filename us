@@ -27,18 +27,18 @@ xkb_symbols "basic" {
     key <AD08> {	[	  i,	I		]	};
     key <AD09> {	[	  o,	O		]	};
     key <AD10> {	[	  p,	P		]	};
-    key <AD11> {	[ bracketleft,	braceleft	]	};
-    key <AD12> {	[ bracketright,	braceright	]	};
+    key <AD11> {	[ bracketleft,	braceleft,		KP_Home,		KP_Home	]	};
+    key <AD12> {	[ bracketright,	braceright,		KP_End,		KP_End	]	};
 
-    key <AC01> {	[	  a,	A 		]	};
+    key <AC01> {	[	  a,	A		]	};
     key <AC02> {	[	  s,	S		]	};
-    key <AC03> {	[	  d,	D		]	};
+    key <AC03> {	[	  d,	D,		KP_Delete,		KP_Delete	]	};
     key <AC04> {	[	  f,	F		]	};
     key <AC05> {	[	  g,	G		]	};
-    key <AC06> {	[	  h,	H,       Left, Left	]	};
-    key <AC07> {	[	  j,	J,       Down, Down	]	};
-    key <AC08> {	[	  k,	K,         Up, Up	]	};
-    key <AC09> {	[	  l,	L,      Right, Right	]	};
+    key <AC06> {	[	  h,	H,		Left,		Left	]	};
+    key <AC07> {	[	  j,	J,		Down,		Down	]	};
+    key <AC08> {	[	  k,	K,		Up,		Up	]	};
+    key <AC09> {	[	  l,	L,		Right,		Right	]	};
     key <AC10> {	[ semicolon,	colon		]	};
     key <AC11> {	[ apostrophe,	quotedbl	]	};
 

@@ -90,6 +90,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
-
-redshift -o -l 34.0012030:-117.9395675 -t 5500:4500
-#redshfit -x

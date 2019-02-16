@@ -91,7 +91,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
+<<<<<<< HEAD
 
 export CVSROOT=:pserver:nakarin.kamkheaw@10.10.10.20:/usr/local/GRANDSTREAM
 
 xhost +SI:localuser:root > /dev/null
+=======
+>>>>>>> c36bb1fd2f407a1728af400b528113b3d70d32c3

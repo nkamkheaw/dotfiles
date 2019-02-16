@@ -67,6 +67,9 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rking/ag.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'dbeniamine/cheat.sh-vim'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,6 +105,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
+
+let g:syntastic_javascript_checkers = [ 'jshint' ]
+let g:syntastic_ocaml_checkers = ['merlin']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_shell_checkers = ['shellcheck']
 
 " Easy motion prefix
 map <space><space> <Plug>(easymotion-prefix)

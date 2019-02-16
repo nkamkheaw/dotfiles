@@ -6,6 +6,7 @@
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
+#ZSH_THEME="robbyrussell"
 
 case $TERM in
     xterm*)
@@ -91,5 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
 
-redshift -o -l 34.0012030:-117.9395675 -t 5500:4500
-#redshfit -x
+export CVSROOT=:pserver:nakarin.kamkheaw@10.10.10.20:/usr/local/GRANDSTREAM
+
+xhost +SI:localuser:root > /dev/null

@@ -95,7 +95,15 @@ set showmode
 set wildmenu
 set number
 set cpoptions+=$
+set relativenumber
+set clipboard=unnamed
+set clipboard=unnamedplus
+set showcmd
+set wildmenu
 " set cc=+1
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " air-line configurations
 set laststatus=2

@@ -66,10 +66,11 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rking/ag.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'dbeniamine/cheat.sh-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -129,11 +130,4 @@ nmap <silent> <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra
 map <C-\> :tab split <CR>:exec("tag ".expand("<cword>"))<CR>
 map <space>l /\%>80v.\+<cr>
 map <C-n> <plug>NERDTreeTabsToggle<cr>
-
-" ag
-if executable('ag')
-    let g:ackprg = 'ag'
-else
-    echom "Install silversearch-ag!!"
-endif
 

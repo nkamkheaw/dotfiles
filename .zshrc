@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/nakarin/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -90,4 +90,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias tmux="tmux -2"
+alias python="pip install ipython &> /dev/null && python -m IPython"
+source ~/.path_env
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/nkamkhea/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/nkamkhea/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/nkamkhea/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/nkamkhea/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
+export ANDROID_HOME="/Users/nkamkhea/Library/Android/sdk"
+export ANDROID_ROOT="$ANDROID_HOME"
+export PATH="$PATH":"$ANDROID_HOME"/platform-tools:"$ANDROID_HOME"/tools  
+
+export PATH="$PATH":/Users/nkamkhea/Projects/flutter/flutter/bin
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

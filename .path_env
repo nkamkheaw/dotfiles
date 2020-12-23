@@ -1,0 +1,13 @@
+eval $(/usr/libexec/path_helper)
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PATH="/usr/local/opt/apr-util/bin:$PATH"
+export PATH="/usr/local/opt/apr/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/apr/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export CPATH=`xcrun --show-sdk-path`/usr/include
+
+export PATH="/Users/nkamkhea/Downloads/nRF52/gcc-arm/bin:$PATH"
+export PATH="/Users/nkamkhea/Library/Python/3.7/bin:$PATH"
+
+. /usr/local/etc/profile.d/z.sh

@@ -1,0 +1,276 @@
+{
+  "name": "linkedin-multiproduct-vscode-plugin-pack",
+  "displayName": "LinkedIn Multiproduct",
+  "version": "0.1.10",
+  "description": "Facilitates development of LinkedIn multiproducts in VS Code",
+  "repository": {
+    "type": "git",
+    "url": "ssh://linkedin.githubprivate.com/multiproduct/multiproduct-vscode-plugin-pack.git"
+  },
+  "license": "UNLICENSED",
+  "author": "mnorth",
+  "publisher": "linkedin",
+  "main": "./dist/extension.js",
+  "files": [
+    "dist",
+    "resources",
+    "node_modules",
+    "docs"
+  ],
+  "scripts": {
+    "build": "yarn vscx:build",
+    "lint": "eslint -c .eslintrc '{src,test,integration-test}/**/*.ts' --ext js,ts",
+    "prepack": "scripty",
+    "postpack": "scripty",
+    "pretest": "scripty",
+    "test": "scripty",
+    "posttest": "scripty",
+    "vscx:build": "scripty",
+    "vscx:build:add-activation-events": "scripty",
+    "vscx:build:add-contributions": "scripty",
+    "vscx:build:docs": "scripty",
+    "vscx:build:docs:api-docs": "scripty",
+    "vscx:build:docs:guides": "scripty",
+    "vscx:build:ts": "scripty",
+    "vscx:build:vsix": "scripty",
+    "vscx:clean": "scripty",
+    "vscx:prepare:docs": "scripty",
+    "vscx:prepare:vsix": "scripty",
+    "vscx:test:integration": "scripty",
+    "vscx:test:integration:build": "scripty",
+    "vscx:test:integration:run": "scripty",
+    "vscx:test:unit": "scripty",
+    "vscx:test:unit:build": "scripty",
+    "vscx:test:unit:run": "scripty",
+    "watch": "tsc -watch -p ./"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "multiproduct.showOwners",
+        "title": "Show Owners (ACLs)"
+      },
+      {
+        "command": "multiproduct.sourceAcls.refresh",
+        "title": "Refresh",
+        "icon": {
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        }
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "linkedin-extensions.autoUpdate": {
+          "type": "boolean",
+          "description": "Automatically install private (LinkedIn) extension updates after downloading them",
+          "default": true
+        },
+        "linkedin-extensions.directory": {
+          "type": "string",
+          "description": "Directory to store downloaded private (LinkedIn) extension updates"
+        },
+        "multiproduct.enableSourceAclsView": {
+          "type": "boolean",
+          "description": "Enable \"Source ACLs\" view",
+          "default": true
+        },
+        "eslint.validate": {
+          "type": "array",
+          "default": [
+            "javascript",
+            "typescript"
+          ],
+          "description": "An array of language ids which should be validated by ESLint"
+        },
+        "yaml.schemas": {
+          "type": "object",
+          "default": {
+            "https://gist.githubusercontent.com/mike-north/01a456c54f2c7f8536442b0ad331ac3d/raw/c9dd7272e1a76bbe4bb19377e408fda7ab3e71c1/acl.schema.json": "acl/*.acl"
+          },
+          "description": "Associate schemas to YAML files in the current workspace"
+        }
+      }
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": "**/product-spec.json",
+        "url": "./node_modules/@linkedin/foundation-json-schemas/schemas/from-dependencies/shared-schemas/schemas/productSpec.json"
+      },
+      {
+        "fileMatch": "**/tbconfig.json",
+        "url": "https://raw.githubusercontent.com/TracerBench/tracerbench/master/packages/cli/tb-schema.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "multiproduct.showOwners",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorTextFocus"
+      }
+    ],
+    "languages": [
+      {
+        "id": "yaml",
+        "extensions": [
+          ".acl"
+        ]
+      },
+      {
+        "id": "python",
+        "filenames": [
+          "pemberly"
+        ]
+      },
+      {
+        "id": "xml",
+        "extensions": [
+          ".src",
+          ".fabric"
+        ]
+      },
+      {
+        "id": "properties",
+        "filenames": [
+          ".pemberlyrc",
+          ".reviewboardrc",
+          "start_args.txt"
+        ]
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus",
+          "command": "multiproduct.showOwners",
+          "group": "navigation"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "multiproduct.sourceAcls.refresh",
+          "when": "view == sourceAcls",
+          "group": "navigation"
+        }
+      ]
+    },
+    "taskDefinitions": [
+      {
+        "type": "mint",
+        "required": [
+          "task"
+        ],
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "The mint command to run"
+          }
+        }
+      }
+    ],
+    "views": {
+      "linkedinmp": [
+        {
+          "id": "sourceAcls",
+          "name": "Source ACLs",
+          "when": "config.multiproduct.enableSourceAclsView"
+        },
+        {
+          "id": "helpView",
+          "name": "Help"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "linkedinmp",
+          "title": "LinkedIn Multiproduct",
+          "icon": "images/linkedin.svg"
+        }
+      ]
+    }
+  },
+  "activationEvents": [
+    "workspaceContains:product-spec.json",
+    "onView:helpView"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "./scripts/check-package-json && node-mp-bridge yarn:precommit --milestone 1 && git add product-spec.json"
+    }
+  },
+  "dependencies": {
+    "@linkedin/acl": "^2.0.0",
+    "@linkedin/foundation-json-schemas": "^0.0.2",
+    "@linkedin/vscode-extension-utils": "^0.2.4",
+    "semver": "^6.3.0"
+  },
+  "devDependencies": {
+    "@grconrad/vscode-binaries": "1.43.0",
+    "@linkedin/js-apidoc-artifact-packager": "^0.0.10",
+    "@linkedin/node-mp-bridge": "^1.2.15",
+    "@linkedin/pemberly-core": "^2.0.94",
+    "@linkedin/vscode-extension-scripts": "^0.0.20",
+    "@types/chalk": "^0.4.31",
+    "@types/fs-extra": "^8.1.0",
+    "@types/glob": "^7.1.1",
+    "@types/got": "^9.6.4",
+    "@types/mocha": "^5.2.6",
+    "@types/nock": "^10.0.3",
+    "@types/prettier": "^1.8.0",
+    "@types/qunit": "^2.9.0",
+    "@types/rimraf": "^2.0.2",
+    "@types/semver": "^6.0.2",
+    "@types/vscode": "^1.36.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "chalk": "^2.4.2",
+    "esdoc": "^1.1.0",
+    "eslint": "^6.8.0",
+    "execa": "^1.0.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
+    "husky": "^4.2.3",
+    "make-dir": "^3.0.0",
+    "make-dir-cli": "^2.0.0",
+    "mocha": "^6.1.4",
+    "nock": "^11.4.0",
+    "ora": "^2.0.0",
+    "pkg-up": "^3.1.0",
+    "prettier": "^1.18.2",
+    "qunit": "^2.9.3",
+    "rimraf": "^3.0.0",
+    "scripty": "^1.8.0",
+    "sort-package-json": "^1.40.0",
+    "ts-loader": "^5.4.5",
+    "typescript": "~3.9.5",
+    "vsce": "^1.71.0",
+    "vscode-test": "^1.0.2",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.1.2",
+    "xml-js": "^1.6.8"
+  },
+  "extensionPack": [
+    "ms-vscode-remote.remote-ssh",
+    "redhat.vscode-yaml"
+  ],
+  "engines": {
+    "node": "10.* || >= 12.0.0",
+    "vscode": "^1.36.0"
+  },
+  "esdoc": {
+    "destination": "./api-docs",
+    "source": "./src"
+  },
+  "scripty": {
+    "modules": [
+      "@linkedin/vscode-extension-scripts"
+    ]
+  },
+  "volta": {
+    "node": "12.13.0",
+    "yarn": "1.22.4"
+  }
+}

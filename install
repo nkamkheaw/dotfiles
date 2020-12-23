@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# vim
+ln -sf ${BASEDIR}/vimrc ~/.vimrc
+ln -sf ${BASEDIR}/vim/ ~/.vim
+
+# zsh
+ln -sf ${BASEDIR}/zshrc ~/.zshrc
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# git
+ln -sf ${BASEDIR}/gitconfig ~/.gitconfig
+
+# tmux
+ln -sf ${BASEDIR}/tmux ~/.tmux
+ln -sf ${BASEDIR}/tmux/.tmux.config ~/.tmux/.tmux.conf
+ln -sf ${BASEDIR}/tmux.conf.local ~/.tmux.conf.local
+
+# env
+ln -sf ${BASEDIR}/path_env ~/.path_env
+

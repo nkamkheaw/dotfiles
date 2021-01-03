@@ -98,7 +98,7 @@ set number
 set cpoptions+=$
 set relativenumber
 set clipboard=unnamed
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 set showcmd
 set wildmenu
 " set cc=+1

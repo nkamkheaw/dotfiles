@@ -1,5 +1,0 @@
-pane	acl	0	:github-app-acl	0	:-	0	:/Users/nkamkhea/Development/github-app-acl_trunk/github-app-acl	1	zsh	:
-pane	acl	1	:acls	1	:*	0	:/Users/nkamkhea/Development/acls_trunk/acls	1	zsh	:
-window	acl	0	0	:-	bbe6,231x82,0,0,9
-window	acl	1	1	:*	bbdf,231x82,0,0,2
-state	acl	

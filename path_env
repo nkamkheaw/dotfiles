@@ -11,3 +11,6 @@ export PATH="/Users/nkamkhea/Downloads/nRF52/gcc-arm/bin:$PATH"
 export PATH="/Users/nkamkhea/Library/Python/3.7/bin:$PATH"
 
 . /usr/local/etc/profile.d/z.sh
+
+# https://stackoverflow.com/questions/50168647/multiprocessing-causes-python-to-crash-and-gives-an-error-may-have-been-in-progr
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

@@ -115,5 +115,7 @@ export ANDROID_ROOT="$ANDROID_HOME"
 export PATH="$PATH":"$ANDROID_HOME"/platform-tools:"$ANDROID_HOME"/tools  
 
 export PATH="$PATH":/Users/nkamkhea/Projects/flutter/flutter/bin
+
+source "$HOME/.cargo/env"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
